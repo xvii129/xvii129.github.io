@@ -5,15 +5,23 @@
   
 
   
-  <title>Hexo</title>
+  <title>git-分支操作命令-进阶版 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="工作中常用的git分支操作 1. 查看文件改动：git status1234567891011121314&#x2F;* 查看分支改动 *&#x2F;git status&#x2F;* 查看分支改动详情 *&#x2F;git status -s&#x2F;* 文件状态的简写 *&#x2F;	M-修改	A-添加	D-删除	R-重命名	？？-未追踪  2. 文件改动暂存：git stash123456789101112131415161718192021">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-分支操作命令-进阶版">
+<meta property="og:url" content="http://yoursite.com/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="工作中常用的git分支操作 1. 查看文件改动：git status1234567891011121314&#x2F;* 查看分支改动 *&#x2F;git status&#x2F;* 查看分支改动详情 *&#x2F;git status -s&#x2F;* 文件状态的简写 *&#x2F;	M-修改	A-添加	D-删除	R-重命名	？？-未追踪  2. 文件改动暂存：git stash123456789101112131415161718192021">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200614184307731.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/202006141849155.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020061418300771.png">
+<meta property="article:published_time" content="2020-06-14T11:22:56.929Z">
+<meta property="article:modified_time" content="2020-06-14T11:22:57.993Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200614184307731.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -62,9 +70,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-git-分支操作命令-进阶版" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git-分支操作命令-进阶版" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/" class="article-date">
   <time datetime="2020-06-14T11:22:56.929Z" itemprop="datePublished">2020-06-14</time>
@@ -77,8 +83,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/">git-分支操作命令-进阶版</a>
+    <h1 class="article-title" itemprop="name">
+      git-分支操作命令-进阶版
     </h1>
   
 
@@ -119,169 +125,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-git-常见问题解决方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/11/git-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-04-11T06:33:17.446Z" itemprop="datePublished">2020-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/11/git-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">git-常见问题解决方法</a>
-    </h1>
+    <a href="/2020/04/11/git-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git-常见问题解决方法</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>git使用过程中遇到的问题解决方法记录，持续更新</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h5 id="1-更新代码后显示：-unable-to-unlink-old-‘xxx-xxx-xx’-invalid-argument"><a href="#1-更新代码后显示：-unable-to-unlink-old-‘xxx-xxx-xx’-invalid-argument" class="headerlink" title="(1) 更新代码后显示： unable to unlink old ‘xxx/xxx/xx’ : invalid argument"></a>(1) 更新代码后显示： <font color=#ff00><strong>unable to unlink old ‘xxx/xxx/xx’ : invalid argument</strong></font></h5><ul>
-<li><strong>问题原因：</strong><br>要提交或更新的文件被系统线程占用</li>
-<li><strong>解决方法：</strong><br>把相关服务暂停，重新pull代码</li>
-</ul>
-<h5 id="2-更新代码后显示：-the-following-untracked-working-tree-files-would-be-overwritten-by-checkout"><a href="#2-更新代码后显示：-the-following-untracked-working-tree-files-would-be-overwritten-by-checkout" class="headerlink" title="(2) 更新代码后显示： the following untracked working tree files would be overwritten by checkout"></a>(2) 更新代码后显示： <font color=#ff00>the following untracked working tree files would be overwritten by checkout</font></h5><ul>
-<li><strong>问题原因：</strong><br>本地代码仓库目录下有untracked文件</li>
-<li><strong>解决方法：</strong><br>如果没有需要上库的代码，直接执行 git clean -d -fx删除untracked文件</li>
-</ul>
-<h5 id="3-更新代码后显示："><a href="#3-更新代码后显示：" class="headerlink" title="(3) 更新代码后显示："></a>(3) 更新代码后显示：</h5><p><font color=#ff00><strong>your local changes to the following files would be overwritten by merge…</strong></font><br><font color=#ff00><strong>please move or remove them before you merge</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>新修改的代码之前未提交，可能被服务器上的代码覆盖</li>
-<li><strong>解决方法1：</strong><br>保留本地修改，然后add/commit/push到远程仓库<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 暂存本地修改 */</span></span><br><span class="line">git stash</span><br><span class="line"><span class="comment">/* 拉取服务器最新代码 */</span></span><br><span class="line">git pull origin master</span><br><span class="line"><span class="comment">/* 暂存代码恢复 */</span></span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure></li>
-<li><strong>解决方法2：</strong><br>放弃本地修改 - 直接回退到上一版本，再拉取服务器最新代码<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard</span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="4-git-pull的时候认证失败："><a href="#4-git-pull的时候认证失败：" class="headerlink" title="(4) git pull的时候认证失败："></a>(4) git pull的时候认证失败：</h5><p><font color=#ff00><strong>remote: invalid Login or password</strong></font><br><font color=#ff00><strong>fatal: Authentication failed for ‘https://…’</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>账号密码失效或者是未登录</li>
-<li><strong>解决方法：</strong><br>windows账户下，控制面板-&gt;用户帐户-&gt;windows凭据-&gt;<strong>修改git密码</strong></li>
-</ul>
-<h5 id="5-版本回退git-reset-–hard-hash-后提示："><a href="#5-版本回退git-reset-–hard-hash-后提示：" class="headerlink" title="(5) 版本回退git reset –hard {hash}后提示："></a>(5) 版本回退git reset –hard {hash}后提示：</h5><p><font color=#ff00><strong>fatal: could not parse object “hash id”</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>切换到master分支后没有更新最新代码，git log不包含要reset的节点</li>
-<li><strong>解决方法：</strong><br>更新代码后git log找到对应节点hash id再reset</li>
-</ul>
-<h5 id="6-切分支后提示文件有修改，撤销文件修改报错-对这个文件任何修改都报错"><a href="#6-切分支后提示文件有修改，撤销文件修改报错-对这个文件任何修改都报错" class="headerlink" title="(6) 切分支后提示文件有修改，撤销文件修改报错/对这个文件任何修改都报错"></a>(6) 切分支后提示文件有修改，撤销文件修改报错/对这个文件任何修改都报错</h5><p><font color=#ff00><strong>unlink of file ‘modifyFile.c’ failed. should I try again?(y/n)</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>与问题(1)一样，有线程占用要修改的文件，比如代码查看器等</li>
-<li><strong>解决方法：</strong><br>把相关服务停了，重新处理</li>
-</ul>
-<h5 id="7-git-push后提示"><a href="#7-git-push后提示" class="headerlink" title="(7) git push后提示:"></a>(7) git push后提示:</h5><p><font color=#ff00><strong>to https://.git</strong></font><br><font color=#ff00><strong>![rejected] localRepo-&gt;remoteRepo(fetch first)</strong></font><br><font color=#ff00><strong>error: failed to push some refs to ‘https://.git’</strong></font><br><font color=#ff00><strong>Updates were rejected because the remote contain work that you do not have locally.</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>本地仓库不包含远程仓库修改</li>
-<li><strong>解决方法：</strong><br>更新远程分支并重新add/commit/push</li>
-</ul>
-<h5 id="8-git-push后提示"><a href="#8-git-push后提示" class="headerlink" title="(8) git push后提示:"></a>(8) git push后提示:</h5><p><font color=#ff00><strong>to https://.git</strong></font><br><font color=#ff00><strong>![rejected] localRepo-&gt;remoteRepo(fetch first)</strong></font><br><font color=#ff00><strong>error: failed to push some refs to ‘https://.git’</strong></font><br><font color=#ff00><strong>Updates were rejected because the tip of your current branch is behind its remote couterpart. Integrate the remote changes bufore pushing again.</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>本地仓库节点落后于远程仓库节点，当然这可能是自己主动回退的</li>
-<li><strong>解决方法：</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* 方案1：强推。覆盖远程分支，这样会使远程修改丢失，多人同一分支写作的时候不可取 */</span>  </span><br><span class="line"></span><br><span class="line">git push -u origin YOUR_BRANCH -f</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 方案2：重新拉取远程仓库merge再push。结合具体代码修改情况做处理 */</span></span><br><span class="line"></span><br><span class="line">git pull origin YOUR_BRANCH</span><br><span class="line">git push -u origin YOUR_BRANCH</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 方案3：直接推到新分支，原分支作废 */</span></span><br><span class="line"></span><br><span class="line">git push origin YOUR_BRANCH_NEW</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">git branch YOUR_BRANCH_NEW</span><br><span class="line">git push -u origin YOUR_BRANCH_NEW</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="9-git-pull后提示"><a href="#9-git-pull后提示" class="headerlink" title="(9) git pull后提示"></a>(9) git pull后提示</h5><p><font color=#ff00><strong>fatal: refuse to merge unrelated histories</strong></font><br><img src="https://img-blog.csdnimg.cn/20200411150326959.png" alt="在这里插入图片描述"></p>
-<ul>
-<li><strong>问题原因：</strong><br>出现这个问题的最主要原因还是在于本地仓库和远程仓库实际上是独立的两个仓库，如果一开始用git clone拷贝到本地就不存在这个问题。本地git init后尝试与远程分支关联</li>
-<li><strong>解决方法：</strong><br>pull命令后加 –allow-unrelated-histories 来解决，合并两个独立启动仓库的历史<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="10-git-checkout后提示"><a href="#10-git-checkout后提示" class="headerlink" title="(10) git checkout后提示:"></a>(10) git checkout后提示:</h5><p><font color=#ff00><strong>error: cannot stat ‘file….’: Filename too long</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>如提示，文件名过长无法checkout。git 可以创建4096长度的文件名，然而在windows最多是260，因为git用了旧版本的windows api，导致出现这种情况。</li>
-<li><strong>解决方法：</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 去除文件名长度限制 */</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">config</span> --global core.longpaths <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="11-git-pull后撤销"><a href="#11-git-pull后撤销" class="headerlink" title="(11) git pull后撤销:"></a>(11) git pull后撤销:</h5><ul>
-<li><strong>问题原因：</strong><br>主干分支当前跑不过等原因</li>
-<li><strong>解决方法：</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 查看当前分支操作记录 */</span></span><br><span class="line"></span><br><span class="line">git reflog YOUR_BRANCH</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 回退到上一节点，拉取master之前 */</span></span><br><span class="line"></span><br><span class="line">git reset --hard YOUR_BRANCH@&#123;<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="12-git-checkout-filename后报错"><a href="#12-git-checkout-filename后报错" class="headerlink" title="(12) git checkout filename后报错:"></a>(12) git checkout filename后报错:</h5><p><font color=#ff00><strong>error: pathspec did not match any files known to git</strong></font></p>
-<ul>
-<li><strong>问题原因：</strong><br>git checkout filename回退未添加到缓存区的文件，但是对未track的文件不生效。git checkout未track文件git以为是切分支</li>
-<li><strong>解决方法：</strong><br>更新如果不需要该文件，直接删除<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm filename</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<p>2020.06.11<br>持续更新</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/11/git-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-id="ck8v8yqsj000008cm4oiq0skd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/06/hello-world/" class="article-date">
-  <time datetime="2020-04-06T14:07:41.371Z" itemprop="datePublished">2020-04-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/06/hello-world/" data-id="ck8rgw8zq0000y8cm3fub7phb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
