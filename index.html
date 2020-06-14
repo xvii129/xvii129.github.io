@@ -64,6 +64,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-Pycharm安装&amp;导入模块记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time datetime="2020-06-14T15:13:08.320Z" itemprop="datePublished">2020-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/">Python-Pycharm安装&amp;导入模块记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center>
+</center>
+
+<p><font color=#ff00ee><strong>加环境变量的目的是为了让系统能找到执行程序</strong></font></p>
+<h4 id="1-Pycharm安装"><a href="#1-Pycharm安装" class="headerlink" title="1. Pycharm安装"></a><font color=#00d>1. Pycharm安装</font></h4><ul>
+<li>（1）官网下载安装社区版：<a href="http://www.jetbrains.com/pycharm/download/#section=windows" target="_blank" rel="noopener">http://www.jetbrains.com/pycharm/download/#section=windows</a></li>
+<li>（2）jdk版本不支持，需要升级到1.8以上；<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-&gt; jdk官网登不上，网上搜索，但是碰到了挂羊头卖狗肉的网站下载下来还是<span class="number">1.7</span>版本（注意识别）</span><br><span class="line"></span><br><span class="line">-&gt; jdk升级需要手动添加环境变量</span><br></pre></td></tr></table></figure></li>
+<li>（3）Pycharm使用需要激活码：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-&gt; 网上直接搜最新的激活码，CSDN博客上有人分享，部分可用部分不可用，多试一下</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="2-Python导入requests模块失败"><a href="#2-Python导入requests模块失败" class="headerlink" title="2. Python导入requests模块失败"></a><font color=#00d>2. Python导入requests模块失败</font></h4><ul>
+<li>提示connect timeout，找不到模块</li>
+<li>打开cmd输入Python显示命令不存在，Python IDLE能正常使用</li>
+<li>网上搜索Python提示命令不存在的原因：没有添加环境变量。</li>
+<li>手动添加环境变量后能搜到模块，如下<br><img src="https://img-blog.csdnimg.cn/20200614220629445.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h4 id="3-Python导入pip模块失败"><a href="#3-Python导入pip模块失败" class="headerlink" title="3. Python导入pip模块失败"></a><font color=#00d>3. Python导入pip模块失败</font></h4></li>
+<li>pip安装时又提示timeout</li>
+<li>网上查找教程：需找到Python安装的script目录，即有pip.exe执行文件的目录，再把pip加到环境变量中，模块就能下载成功了<br><img src="https://img-blog.csdnimg.cn/20200614225732631.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><blockquote>
+<p>注释：<br>windows下要方便的使用某个命令如pip install tornado，需要把执行文件目录价到环境变量中</p>
+</blockquote>
+</li>
+</ul>
+<p>参考文章：<br><a href="https://www.runoob.com/w3cnote/pycharm-windows-install.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/pycharm-windows-install.html</a></p>
+<p>2020.06.14 create</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/" data-id="ckbf7wh7600003scm747x2e46" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git-分支操作命令-进阶版" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/" class="article-date">
@@ -310,6 +370,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/">Python-Pycharm安装&amp;导入模块记录</a>
+          </li>
         
           <li>
             <a href="/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/">git-分支操作命令-进阶版</a>
