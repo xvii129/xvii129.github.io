@@ -64,6 +64,127 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-基本数据类型和命名规则" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/21/Python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/" class="article-date">
+  <time datetime="2020-06-21T13:32:23.971Z" itemprop="datePublished">2020-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/21/Python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">Python-基本数据类型和命名规则</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>去年9月学了一段时间python，中间又很久没继续了。之前的笔记</p>
+<hr>
+<h1 id="python数据类型"><a href="#python数据类型" class="headerlink" title="python数据类型"></a>python数据类型</h1><ul>
+<li><strong>数字</strong> Number</li>
+<li><strong>字串</strong> String</li>
+<li><strong>列表</strong> List</li>
+<li><strong>元组</strong> Tuple</li>
+<li><strong>集合</strong> Set</li>
+<li><strong>字典</strong> Dictionary<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 记忆：你是兰亭送的</span></span><br><span class="line"></span><br><span class="line">变量使用前必须赋值，变量赋值后变量才会被创建</span><br><span class="line"></span><br><span class="line">类型属于对象，变量没有类型</span><br><span class="line"></span><br><span class="line">变量仅仅是对象的引用，类型是变量所指的内存中对象的类型</span><br></pre></td></tr></table></figure></li>
+<li><strong>不可变数据类型：</strong> 数字 + 字串 + 元组 (你是铁)</li>
+<li><strong>可变数据类型：</strong> 列表 + 集合 + 字典</li>
+</ul>
+<h2 id="数字"><a href="#数字" class="headerlink" title="数字"></a><font color=#00d>数字</font></h2><ul>
+<li>python有四种数字类型<ul>
+<li>int</li>
+<li>float</li>
+<li>bool</li>
+<li>complex<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>) python2没有bool型，<span class="number">0</span>表示false，<span class="number">1</span>表示true</span><br><span class="line">(<span class="number">2</span>) 整型的表示形式：十进制，二进制，八进制，十六进制等</span><br><span class="line">(<span class="number">3</span>) 浮点型表示形式：十进制，科学计数法</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>python数值计算<ul>
+<li>加/减/乘/除/取余/乘方<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">除法：</span><br><span class="line">/ 得到浮点数：<span class="number">2</span> / <span class="number">4</span> = <span class="number">0.5</span></span><br><span class="line">// 得到整型数：<span class="number">2</span> / <span class="number">4</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a><font color=#00d>字符串</font></h2></li>
+</ul>
+</li>
+<li>‘ ‘或” “表示</li>
+<li>字符串有两种索引方式：从左往右以0开始，从右往左以-1开始</li>
+<li>+表示字符串连接，*表示字符串复制</li>
+<li>字符串截取语法： str[2:5] - 访问第三道第五个字符，“左閉右开区间”</li>
+</ul>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a><font color=#00d>列表</font></h2><ul>
+<li>[x, xx, …] 表示</li>
+<li>两种索引方式：从左往右0开始，从右往左-1开始</li>
+<li>+表示连接，*表示复制</li>
+<li>列表截取语法：list[头下标:尾下标:步长]如letters[1:4:2] - 索引1～4步长为2，步长为负数表示逆向读取</li>
+</ul>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a><font color=#00d>元组</font></h2><ul>
+<li>(x, xx, …)表示</li>
+<li>两种索引方式：从左往右0开始，从右往左-1开始</li>
+<li>+表示元组连接</li>
+<li>0个和1个元素的元组<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tup1 = ()</span><br><span class="line">tup2 = (<span class="number">20</span>,)		/* 逗号 */</span><br></pre></td></tr></table></figure>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a><font color=#00d>集合</font></h2></li>
+<li>{}表示</li>
+<li>与字典不同，字典必须是键值对，集合由各种元素组成</li>
+<li>集合输出有自动去重功能</li>
+<li>{ }或set()函数创建，但是空集合只能用set()而不能用{} - for 空字典<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">运算：</span><br><span class="line"> a &amp; b : 交集</span><br><span class="line"> a | b：并集</span><br><span class="line"> a - b：差集</span><br><span class="line"> a ^ b：a和b集合中不同时存在的元素</span><br></pre></td></tr></table></figure>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a><font color=#00d>字典</font></h2></li>
+<li>{}表示</li>
+<li>字典是一种映射类型，元素是键值对，是一个无序的键值的集合{key:value}</li>
+<li>字典中，键必须是不可变类型且是唯一的</li>
+<li>创建空字典用{}</li>
+</ul>
+<h1 id="python的命名规则"><a href="#python的命名规则" class="headerlink" title="python的命名规则"></a>python的命名规则</h1><h2 id="项目名"><a href="#项目名" class="headerlink" title="项目名"></a><font color=#ff00>项目名</font></h2><ul>
+<li><font color=#00d>首字母大写，其余小写，若多个单词组合可用_下划线增加可读性</font></li>
+<li>举例：My_python_project</li>
+</ul>
+<h2 id="模块名-包名"><a href="#模块名-包名" class="headerlink" title="模块名/包名"></a><font color=#ff00>模块名/包名</font></h2><ul>
+<li><font color=#00d>全部小写字母</font></li>
+<li>举例：package, module, functools</li>
+</ul>
+<h2 id="类名"><a href="#类名" class="headerlink" title="类名"></a><font color=#ff00>类名</font></h2><ul>
+<li><font color=#00d>大驼峰</font></li>
+<li>举例：class Login:  /  class LoginUser</li>
+</ul>
+<h2 id="方法名-函数名"><a href="#方法名-函数名" class="headerlink" title="方法名/函数名"></a><font color=#ff00>方法名/函数名</font></h2><ul>
+<li><font color=#00d>小写字母，多个单词用下划线_隔开增加可读性</font></li>
+<li>举例：def myfunction_add():</li>
+</ul>
+<h2 id="函数参数名"><a href="#函数参数名" class="headerlink" title="函数参数名"></a><font color=#ff00>函数参数名</font></h2><ul>
+<li><font color=#00d>小写字母</font></li>
+<li>参数名和保留关键字冲突，可在参数前或后加下划线</li>
+<li>举例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_len = len(<span class="string">'string'</span>)</span><br><span class="line">len_ = len(<span class="string">'string'</span>)</span><br><span class="line">print(_len, len_)</span><br></pre></td></tr></table></figure>
+<h2 id="普通变量名"><a href="#普通变量名" class="headerlink" title="普通变量名"></a><font color=#ff00>普通变量名</font></h2></li>
+<li><font color=#00d>小驼峰，或全部小写用下划线_分割</font></li>
+<li>举例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">month_pay = <span class="number">2000</span></span><br><span class="line">monthPay = <span class="number">2000</span></span><br></pre></td></tr></table></figure>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a><font color=#ff00>常量</font></h2></li>
+<li><font color=#00d>常量定义全部为大写，必要时可用下划线分隔单词以增加可读性</font></li>
+<li>举例：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MAX_OVERFLOW</span><br><span class="line">TOTAL</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a><font color=#ff00>其他</font></h2></li>
+<li><font color=#00d>一些命名规则</font><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">变量可以由字母、数字、下画线（_）组成，不能以数字打头</span><br><span class="line"></span><br><span class="line">变量不能包含空格</span><br><span class="line"></span><br><span class="line">不合法命名：</span><br><span class="line">	abc<span class="comment">#xyz	// #不允许出现#</span></span><br><span class="line">	<span class="number">1</span>abc	// 不允许数字开头</span><br><span class="line"></span><br><span class="line">不论是类成员变量还是全局变量，不要使用 m 或者 g 前缀</span><br><span class="line"></span><br><span class="line">python是动态类型语言，变量名不应带有类型信息 iValue</span><br><span class="line"></span><br><span class="line">不要使用 l 和 <span class="number">1</span>，o 和 <span class="number">0</span> 这种易混淆的字符命名</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>参考文章：<br><a href="https://www.runoob.com/python3/python3-data-type.html" target="_blank" rel="noopener">python3的数据类型</a><br><a href="http://c.biancheng.net/view/2172.html" target="_blank" rel="noopener">python关键字和内置函数</a></p>
+<p>2020.06.21 create</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/21/Python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/" data-id="ckbp44dru0000dkcma7t1g17y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-Pycharm安装&amp;导入模块记录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/" class="article-date">
@@ -114,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/" data-id="ckbf7wh7600003scm747x2e46" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/" data-id="ckbp45kye0000hwcm1lai6830" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/" data-id="ckbezflhl0000q8cm937t1ob2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/" data-id="ckbp45kz10002hwcmfyd9bnbc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/11/git-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-id="ck8v8yqsj000008cm4oiq0skd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/11/git-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-id="ckbp45kz40003hwcm8oojg6xk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/06/hello-world/" data-id="ck8rgw8zq0000y8cm3fub7phb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/06/hello-world/" data-id="ckbp45kyv0001hwcm73ksbsad" class="article-share-link">Share</a>
       
       
     </footer>
@@ -370,6 +491,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/06/21/Python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">Python-基本数据类型和命名规则</a>
+          </li>
         
           <li>
             <a href="/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/">Python-Pycharm安装&amp;导入模块记录</a>
