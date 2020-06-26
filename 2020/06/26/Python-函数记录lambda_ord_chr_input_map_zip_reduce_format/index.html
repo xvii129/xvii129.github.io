@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python-函数记录lambda_ord_chr_input_map_zip_reduce_format | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="if name &#x3D; ‘main‘: 直接调用：就是main函数，条件为真 import后再调用：不是main，是模块名，条件为假12345在直接运行这个模块的时候：	if __name__ &#x3D;&#x3D; &#39;__main__&#39; 之下的代码块将被运行在这个模块形式被导入其他模块时：	if __name__ &#x3D;&#x3D; &#39;__main__&#39; 之下的代码块不会被运行    重点参考这两篇文章：https:&#x2F;&#x2F;blog.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-函数记录lambda_ord_chr_input_map_zip_reduce_format">
+<meta property="og:url" content="http://yoursite.com/2020/06/26/Python-%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95lambda_ord_chr_input_map_zip_reduce_format/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="if name &#x3D; ‘main‘: 直接调用：就是main函数，条件为真 import后再调用：不是main，是模块名，条件为假12345在直接运行这个模块的时候：	if __name__ &#x3D;&#x3D; &#39;__main__&#39; 之下的代码块将被运行在这个模块形式被导入其他模块时：	if __name__ &#x3D;&#x3D; &#39;__main__&#39; 之下的代码块不会被运行    重点参考这两篇文章：https:&#x2F;&#x2F;blog.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200625180054587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200625180648140.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200625181506917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-06-26T10:01:11.082Z">
+<meta property="article:modified_time" content="2020-06-26T10:41:37.765Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200625180054587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Python-函数记录lambda_ord_chr_input_map_zip_reduce_format" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/26/Python-%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95lambda_ord_chr_input_map_zip_reduce_format/" class="article-date">
+  <time datetime="2020-06-26T10:01:11.082Z" itemprop="datePublished">2020-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python-函数记录lambda_ord_chr_input_map_zip_reduce_format
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="if-name-‘main‘"><a href="#if-name-‘main‘" class="headerlink" title="if name = ‘main‘:"></a><font color=#ff00>if <strong>name</strong> = ‘<strong>main</strong>‘:</font></h1><ul>
+<li>直接调用：就是main函数，条件为真</li>
+<li>import后再调用：不是main，是模块名，条件为假<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在直接运行这个模块的时候：</span><br><span class="line">	<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span> 之下的代码块将被运行</span><br><span class="line"></span><br><span class="line">在这个模块形式被导入其他模块时：</span><br><span class="line">	<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span> 之下的代码块不会被运行</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>重点参考这两篇文章：<br><a href="https://blog.csdn.net/xiaoxik/article/details/78749361" target="_blank" rel="noopener">https://blog.csdn.net/xiaoxik/article/details/78749361</a><br><a href="https://www.cnblogs.com/chenhuabin/p/10118199.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenhuabin/p/10118199.html</a></p>
+<h1 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a><font color=#ff00>lambda</font></h1><ul>
+<li>匿名函数lambda：是指一类无需定义标识符的函数或子程序</li>
+<li>lambda函数<strong>不能包含命令</strong></li>
+<li>包含的表达式<strong>不能超过一个</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/* <span class="number">1.</span> 传入多个参数的<span class="keyword">lambda</span>函数 */</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(x, y)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line"><span class="keyword">lambda</span>函数实现：</span><br><span class="line">func = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line">print(func(<span class="number">4</span>,<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">/* <span class="number">2.</span> 传入一个参数的<span class="keyword">lambda</span>函数 */</span><br><span class="line">func = lamnbda x: x*x</span><br><span class="line">print(func(<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">/* <span class="number">3.</span> 传入多个参数的<span class="keyword">lambda</span>函数 */</span><br><span class="line">func = <span class="keyword">lambda</span> x,y,z:(x + <span class="number">8</span>) * y - z</span><br><span class="line">print(func(<span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="ord-和chr"><a href="#ord-和chr" class="headerlink" title="ord()和chr()"></a><font color=#ff00>ord()和chr()</font></h1></li>
+<li>两个函数为配对函数</li>
+<li><strong>ord()函数</strong>：将字符转换为对应的ASCII数值，返回对应的十进制整数<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：字符</span><br><span class="line">输出：ASCII数值（十进制）</span><br></pre></td></tr></table></figure></li>
+<li><strong>chr()函数</strong>：将一个数字range(256)即0～255的数字转换为一个ASCII字符<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：十进制或者十六进制数字</span><br><span class="line">输出：ASCII字符</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ord(<span class="string">'a'</span>)</span><br><span class="line">-&gt; 97</span><br><span class="line"></span><br><span class="line">ord(<span class="string">'b'</span>)</span><br><span class="line">-&gt; 98</span><br><span class="line"></span><br><span class="line">print(chr(<span class="number">0x30</span>),chr(<span class="number">97</span>))</span><br><span class="line">-&gt; 0 a</span><br></pre></td></tr></table></figure>
+<h1 id="input-和raw-input"><a href="#input-和raw-input" class="headerlink" title="input()和raw_input()"></a><font color=#ff00>input()和raw_input()</font></h1><ul>
+<li>在 Python3.x 中 <strong>raw_input( )</strong> 和 <strong>input( )</strong> 进行了整合，去除了 raw_input( )，<strong>仅保留了 input( ) 函数</strong></li>
+<li>其接收任意任性输入，将所有输入默认为<font color=#00dd><strong>字符串</strong></font>处理，并返回<font color=#00dd><strong>字符串</strong></font>类型</li>
+</ul>
+<h1 id="map"><a href="#map" class="headerlink" title="map()"></a><font color=#ff00>map()</font></h1><ul>
+<li>可处理多个可迭代对象<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map(function, iterable,...)</span><br></pre></td></tr></table></figure></li>
+<li>例子<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* <span class="number">1.</span> <span class="keyword">lambda</span>函数求乘方 */</span><br><span class="line">list(map(<span class="keyword">lambda</span> x: x ** <span class="number">2</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]))</span><br><span class="line">-&gt; [1, 4, 9, 16, 25]</span><br><span class="line"></span><br><span class="line">/* <span class="number">2.</span> 姓名首字母大写 */</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">format_name</span><span class="params">(s)</span>:</span></span><br><span class="line">	s1 = s[<span class="number">0</span>:<span class="number">1</span>].upper() + s[<span class="number">1</span>:].lower()</span><br><span class="line">	<span class="keyword">return</span> s1</span><br><span class="line"></span><br><span class="line">print(list(map(format_name, [<span class="string">'alice'</span>, <span class="string">'bOB'</span>, <span class="string">'cLarK'</span>])))</span><br><span class="line">-&gt; ['Alice', 'Bob', 'Clark']</span><br></pre></td></tr></table></figure>
+<h1 id="zip"><a href="#zip" class="headerlink" title="zip()"></a><font color=#ff00>zip()</font></h1></li>
+<li><strong>zip()语法</strong>：将可迭代对象作为参数，将对象中对应的元素打包成一个个<strong>元组</strong>，然后返回由这些<strong>元组组成的对象</strong><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zip(iterable1, iterable2,...)</span><br><span class="line"></span><br><span class="line">iterable - 一个或多个可迭代对象（字串，列表，元组，字典）</span><br><span class="line"></span><br><span class="line">返回值：python3中返回的是元组组成的对象，如果要得到列表，可用list进行转换</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">c = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line">zipped = zip(a, b)</span><br><span class="line">print(list(zipped))</span><br><span class="line">print(list(zip(a, c)))		<span class="comment"># 元素个数与最短的列表一致</span></span><br><span class="line">print(list(zip(*zipped)))	<span class="comment"># 与zip相反，*zipped可理解为解压</span></span><br><span class="line"></span><br><span class="line">-&gt; </span><br><span class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</span><br><span class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</span><br><span class="line">[(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)]</span><br></pre></td></tr></table></figure>
+<h1 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a><font color=#ff00>reduce()</font></h1><ul>
+<li><strong>语法</strong>：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reduce(function, iterable[, initializer])</span><br><span class="line"></span><br><span class="line">function: 函数，有两个参数</span><br><span class="line">iterable: 可迭代对象</span><br><span class="line">initializer: 可选，初始参数</span><br></pre></td></tr></table></figure></li>
+<li><strong>说明</strong>：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python内置函数</span><br><span class="line">接受的参数和map类似，一个函数function，一个列表list，但是reduce()传入的函数function必须接收两个参数</span><br><span class="line">reduce()函数对list的每个元素反复调用函数function，并返回最终结果值</span><br></pre></td></tr></table></figure></li>
+<li><strong>例子</strong>：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/* <span class="number">1.</span> 列表所有元素求和 */</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x, y)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line">reduce(func, [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</span><br><span class="line"></span><br><span class="line">-&gt;</span><br><span class="line">先及算头两个元素：func(<span class="number">1</span>, <span class="number">3</span>) = <span class="number">4</span></span><br><span class="line">再把结果和第三个元素计算：func(<span class="number">4</span>, <span class="number">5</span>) = <span class="number">9</span></span><br><span class="line">第四个、第五个，返回结果：<span class="number">25</span></span><br><span class="line"></span><br><span class="line">// 以上和python内置函数sum()结果一致，实现功能相同</span><br><span class="line"></span><br><span class="line">/* <span class="number">2.</span> 带初值的reduce()函数使用 */</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x, y)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line">reduce(func, [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>], <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">-&gt;</span><br><span class="line">第三个可选参数作为计算初始值，结果为<span class="number">125</span></span><br></pre></td></tr></table></figure>
+<h1 id="format"><a href="#format" class="headerlink" title="format()"></a><font color=#ff00>format()</font></h1></li>
+<li><strong>语法</strong>：基本语法是用{}和:代替%<br><img src="https://img-blog.csdnimg.cn/20200625180054587.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li><strong>格式说明</strong>：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">^, &lt;, &gt; 分别是居中、左对齐、右对齐，后面带宽度</span><br><span class="line"></span><br><span class="line">: 号后面带填充的字符，只能是一个字符，不指定则默认是用空格填充</span><br><span class="line"></span><br><span class="line">+ 表示在正数前显示 +，负数前显示 -；  （空格）表示在正数前加空格</span><br><span class="line"></span><br><span class="line">b/d/o/x 分别是二进制、十进制、八进制、十六进制。</span><br></pre></td></tr></table></figure></li>
+<li><strong>例子</strong><br>关键字参数：</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200625180648140.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* 输出字符串，输出菱形图案 */</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> raw <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">	print(<span class="string">'&#123;:^7s&#125;'</span>.format(<span class="string">'*'</span> * (<span class="number">2</span> * raw + <span class="number">1</span>)))</span><br><span class="line"><span class="keyword">for</span> raw <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">	print(<span class="string">"&#123;:^7s&#125;"</span>.format(<span class="string">'*'</span> * (<span class="number">5</span> - <span class="number">2</span> * raw)))</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200625181506917.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JhaWR1XzM1NjkyNjI4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>参考文章：</strong><br><a href="https://www.runoob.com/PYTHON/att-string-format.html" target="_blank" rel="noopener">https://www.runoob.com/PYTHON/att-string-format.html</a></p>
+<p>2020.06.25 create</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/26/Python-%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95lambda_ord_chr_input_map_zip_reduce_format/" data-id="ckbw2ewms00005wcm138k7urb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/21/Python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python-基本数据类型和命名规则</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/26/Python-%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95lambda_ord_chr_input_map_zip_reduce_format/">Python-函数记录lambda_ord_chr_input_map_zip_reduce_format</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/21/Python-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">Python-基本数据类型和命名规则</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/14/Python-Pycharm%E5%AE%89%E8%A3%85&%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E8%AE%B0%E5%BD%95/">Python-Pycharm安装&amp;导入模块记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/14/git-%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E8%BF%9B%E9%98%B6%E7%89%88/">git-分支操作命令-进阶版</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/11/git-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">git-常见问题解决方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
