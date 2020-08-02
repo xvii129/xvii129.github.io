@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C++ 字符串操作函数使用总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="字符串连接：12345678910111213&#x2F;* 在字符串结尾连接一个字符串 *&#x2F;string &amp;append(const char *s);					&#x2F;&#x2F; 把字符串s连接到当前字符串结尾string &amp;append(const char *s, int n);			&#x2F;&#x2F; 把字符串s的 前n个字符 连接到当前字符串结尾string &amp;append(const string">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 字符串操作函数使用总结">
+<meta property="og:url" content="http://yoursite.com/2020/07/19/C++%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="字符串连接：12345678910111213&#x2F;* 在字符串结尾连接一个字符串 *&#x2F;string &amp;append(const char *s);					&#x2F;&#x2F; 把字符串s连接到当前字符串结尾string &amp;append(const char *s, int n);			&#x2F;&#x2F; 把字符串s的 前n个字符 连接到当前字符串结尾string &amp;append(const string">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-19T03:34:34.071Z">
+<meta property="article:modified_time" content="2020-07-26T13:56:34.195Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C++ 字符串操作函数使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/19/C++%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-07-19T03:34:34.071Z" itemprop="datePublished">2020-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++ 字符串操作函数使用总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符串连接："><a href="#字符串连接：" class="headerlink" title="字符串连接："></a>字符串连接：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在字符串结尾连接一个字符串 */</span></span><br><span class="line">string &amp;append(<span class="keyword">const</span> <span class="keyword">char</span> *s);					<span class="comment">// 把字符串s连接到当前字符串结尾</span></span><br><span class="line">string &amp;append(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">int</span> n);			<span class="comment">// 把字符串s的 前n个字符 连接到当前字符串结尾</span></span><br><span class="line">string &amp;append(<span class="keyword">const</span> string &amp;s, <span class="keyword">int</span> pos, <span class="keyword">int</span> n);<span class="comment">// 把字符串s中从pos开始的n个字符连接到当前字符串的结尾</span></span><br><span class="line"></span><br><span class="line">string str1 = “hello “, str2 = “wide world “;</span><br><span class="line">str1.append(str2.begin()+<span class="number">5</span>, str2.end()); 		<span class="comment">//把s2的迭代器begin()+5和end()之间的部分连接到当前字符串的结尾</span></span><br><span class="line">str1 = “hello world”;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 在字符串结尾添加n个字符 */</span></span><br><span class="line">string &amp;append(<span class="keyword">int</span> n, <span class="keyword">char</span> c);					<span class="comment">// 在当前字符串结尾添加n个字符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 重载运算符用于字符串的比较operator */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 比较当前字符串和字符串s的大小 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">const</span> string &amp;s)</span> <span class="keyword">const</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当前字符串取n个字符与字符串s进行比较 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> n, <span class="keyword">const</span> string &amp;s)</span> <span class="keyword">const</span></span>;					<span class="comment">// 比较当前字符串从pos开始的n个字符组成的字符串与s的大小</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当前字符串取m个字符，字符串s取n个字符进行比较 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> m, <span class="keyword">const</span> string &amp;s, <span class="keyword">int</span> pos2, <span class="keyword">int</span> n)</span><span class="keyword">const</span></span>;	<span class="comment">// 比较当前字符串从pos开始的m个字符组成的字符串与s从pos2位置开始的n个字符串的大小</span></span><br><span class="line"></span><br><span class="line">compare返回值：</span><br><span class="line">	&gt; : <span class="number">1</span></span><br><span class="line">	&lt; : -<span class="number">1</span></span><br><span class="line">	==: <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串字串"><a href="#字符串字串" class="headerlink" title="字符串字串"></a>字符串字串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 提取字符串的子串 */</span></span><br><span class="line"><span class="function">string <span class="title">substr</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> n)</span> <span class="keyword">const</span></span>;			<span class="comment">//返回pos开始的n个字符组成的字符串</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<p><strong>参考文章</strong><br><a href="https://www.cnblogs.com/SoundCoder/p/7711782.html" target="_blank" rel="noopener">string操作函数</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/19/C++%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" data-id="ckdcjpi0z0002tocm011c1ww6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C++ vector数组操作函数总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/18/C++%20%E5%9F%BA%E7%A1%80%E5%92%8C%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C++ 基础和进阶笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/02/C++%20gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/">C++ gdb常用命令汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/">C++ vector数组操作函数总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/19/C++%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/">C++ 字符串操作函数使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/C++%20%E5%9F%BA%E7%A1%80%E5%92%8C%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/">C++ 基础和进阶笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/Python-%E8%AF%BB%E5%8F%96%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%B9%B6%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0-%E5%B0%8F%E7%A8%8B%E5%BA%8F/">Python-读取目录下所有文件并统计其代码行数-小程序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

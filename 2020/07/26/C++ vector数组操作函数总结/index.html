@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C++ vector数组操作函数总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="二维数组创建 创建方式1：push_back()方式创建 123456789101112vector&lt;vector&lt;int&gt;&gt; vec;vector&lt;int&gt; a;a.push_back(1);a.push_back(2);vector&lt;int&gt; b;b.push_back(3);b.push_back(4);vec.push_back(a);vec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ vector数组操作函数总结">
+<meta property="og:url" content="http://yoursite.com/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="二维数组创建 创建方式1：push_back()方式创建 123456789101112vector&lt;vector&lt;int&gt;&gt; vec;vector&lt;int&gt; a;a.push_back(1);a.push_back(2);vector&lt;int&gt; b;b.push_back(3);b.push_back(4);vec.push_back(a);vec">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-26T13:57:10.789Z">
+<meta property="article:modified_time" content="2020-07-26T15:41:40.762Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C++ vector数组操作函数总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-07-26T13:57:10.789Z" itemprop="datePublished">2020-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++ vector数组操作函数总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="二维数组创建"><a href="#二维数组创建" class="headerlink" title="二维数组创建"></a>二维数组创建</h2><ul>
+<li><p>创建方式1：push_back()方式创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; vec;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line">a.push_back(<span class="number">1</span>);</span><br><span class="line">a.push_back(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; b;</span><br><span class="line">b.push_back(<span class="number">3</span>);</span><br><span class="line">b.push_back(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">vec.push_back(a);</span><br><span class="line">vec.push_back(b);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建方式2：m * n的数组 （<strong>推荐</strong>）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; array(m, vector&lt;<span class="keyword">int</span>&gt;(n));	<span class="comment">// 初始化为0；注意(n)的括号不能少，否则编译报错</span></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; array(m, vector&lt;<span class="keyword">int</span>&gt;(n, <span class="number">1</span>))	<span class="comment">// 初始化为1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建方式3：resize()行和列单独创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;	array(m);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; m; i++) &#123;		<span class="comment">// m = array.size()</span></span><br><span class="line">	array[i].resize(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建方式4：不推荐</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; vec;		<span class="comment">// 编译可能报错</span></span><br><span class="line">vec.resize(m, vector&lt;<span class="keyword">int</span>&gt;(n));</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; vec;		<span class="comment">// 编译可能报错</span></span><br><span class="line">vec.resize(m);</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; m; i++) &#123;		<span class="comment">// m = array.size()</span></span><br><span class="line">	vec[i].resize(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="二维数组遍历和输出：https-blog-csdn-net-a819825294-article-details-52088732"><a href="#二维数组遍历和输出：https-blog-csdn-net-a819825294-article-details-52088732" class="headerlink" title="二维数组遍历和输出：https://blog.csdn.net/a819825294/article/details/52088732"></a>二维数组遍历和输出：<a href="https://blog.csdn.net/a819825294/article/details/52088732" target="_blank" rel="noopener">https://blog.csdn.net/a819825294/article/details/52088732</a></h2><ul>
+<li>方式1：迭代器遍历</li>
+</ul>
+<ul>
+<li>方式2：下标遍历</li>
+</ul>
+<h2 id="获取vecotr数组的行和列"><a href="#获取vecotr数组的行和列" class="headerlink" title="获取vecotr数组的行和列"></a>获取vecotr数组的行和列</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> raw = vec.size();		<span class="comment">// 获取行</span></span><br><span class="line"><span class="keyword">int</span> col = vec[<span class="number">0</span>].size();	<span class="comment">// 获取列</span></span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>vector数组和array数组<br>vector数组操作</p>
+<p><strong>参考文章</strong>：<br><a href="https://blog.csdn.net/a819825294/article/details/52088732" target="_blank" rel="noopener">https://blog.csdn.net/a819825294/article/details/52088732</a><br><a href="https://www.cnblogs.com/ranjiewen/p/5294221.html" target="_blank" rel="noopener">https://www.cnblogs.com/ranjiewen/p/5294221.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/" data-id="ckdcjpi0r0001tocm9yz7ab8u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/02/C++%20gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C++ gdb常用命令汇总
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/19/C++%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C++ 字符串操作函数使用总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/02/C++%20gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/">C++ gdb常用命令汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/">C++ vector数组操作函数总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/19/C++%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/">C++ 字符串操作函数使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/C++%20%E5%9F%BA%E7%A1%80%E5%92%8C%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/">C++ 基础和进阶笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/Python-%E8%AF%BB%E5%8F%96%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%B9%B6%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0-%E5%B0%8F%E7%A8%8B%E5%BA%8F/">Python-读取目录下所有文件并统计其代码行数-小程序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

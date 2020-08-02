@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C++ gdb常用命令汇总 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="序言记录gdb常用操作命令 编译 编译生成可执行文件：1234gcc -g Wall test.c -o test	-g 		&#x2F;&#x2F; 加入调试信息，否则显示的是地址	-Wall 	&#x2F;&#x2F; warning显示    1. 使用举例12345678910111213@ 启动：gdb test@ 查看主程序代码：l line_number	&#x2F;&#x2F; l是list的缩写@ 继续查看源码：回车@ 在某一行打断点：b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ gdb常用命令汇总">
+<meta property="og:url" content="http://yoursite.com/2020/08/02/C++%20gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="序言记录gdb常用操作命令 编译 编译生成可执行文件：1234gcc -g Wall test.c -o test	-g 		&#x2F;&#x2F; 加入调试信息，否则显示的是地址	-Wall 	&#x2F;&#x2F; warning显示    1. 使用举例12345678910111213@ 启动：gdb test@ 查看主程序代码：l line_number	&#x2F;&#x2F; l是list的缩写@ 继续查看源码：回车@ 在某一行打断点：b">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-02T03:37:39.984Z">
+<meta property="article:modified_time" content="2020-08-02T04:06:57.693Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C++ gdb常用命令汇总" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/02/C++%20gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/" class="article-date">
+  <time datetime="2020-08-02T03:37:39.984Z" itemprop="datePublished">2020-08-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++ gdb常用命令汇总
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>记录gdb常用操作命令</p>
+<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><ul>
+<li>编译生成可执行文件：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gcc -g Wall test.c -o test</span><br><span class="line"></span><br><span class="line">	-g 		<span class="comment">// 加入调试信息，否则显示的是地址</span></span><br><span class="line">	-Wall 	<span class="comment">// warning显示</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="1-使用举例"><a href="#1-使用举例" class="headerlink" title="1. 使用举例"></a>1. 使用举例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@ 启动：gdb test</span><br><span class="line">@ 查看主程序代码：l line_number	<span class="comment">// l是list的缩写</span></span><br><span class="line">@ 继续查看源码：回车</span><br><span class="line">@ 在某一行打断点：<span class="keyword">break</span> <span class="number">21</span>		<span class="comment">// 或 b 21</span></span><br><span class="line">@ 在某函数打断点：<span class="keyword">break</span> func		<span class="comment">// 或 b func</span></span><br><span class="line">@ 查看断点情况：info <span class="keyword">break</span></span><br><span class="line">@ 运行程序：r					<span class="comment">// run</span></span><br><span class="line">@ 下一句：n						<span class="comment">// next</span></span><br><span class="line">@ 继续运行：c					<span class="comment">// continue</span></span><br><span class="line">@ 打印变量：p					<span class="comment">// print</span></span><br><span class="line">@ 查看堆栈：bt					<span class="comment">// backtrace</span></span><br><span class="line">@ 退出函数：fin					<span class="comment">// finish</span></span><br><span class="line">@ 退出程序：q					<span class="comment">// quit</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-断点"><a href="#2-断点" class="headerlink" title="2. 断点"></a>2. 断点</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">break</span> line_number</span><br><span class="line"><span class="keyword">break</span> function</span><br><span class="line"><span class="keyword">break</span> +offset</span><br><span class="line"><span class="keyword">break</span> -offset					<span class="comment">// 在当前行的前/后offset行停住</span></span><br><span class="line"><span class="keyword">break</span> filename:line_number		<span class="comment">// 在源文件的某行停住</span></span><br><span class="line"><span class="keyword">break</span> filename:function			<span class="comment">// 在源文件的某个函数入口处停住</span></span><br><span class="line"><span class="keyword">break</span>							<span class="comment">// 在下一行指令处停住</span></span><br><span class="line"><span class="keyword">break</span> <span class="keyword">if</span> condition				<span class="comment">// 条件成立时停住,如：break if i=100	// i=100时停住程序</span></span><br><span class="line">info <span class="keyword">break</span>						<span class="comment">// 查看所有断点</span></span><br><span class="line">info <span class="keyword">break</span> number				<span class="comment">// 查看第number个断点</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-观察点"><a href="#3-观察点" class="headerlink" title="3. 观察点"></a>3. 观察点</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">watch <span class="keyword">var</span>						<span class="comment">// 为表达式或变量设置观察点，变量值有变化，马上停住程序</span></span><br><span class="line">rwatch <span class="keyword">var</span>						<span class="comment">// 变量被读read时停住程序</span></span><br><span class="line">awatch <span class="keyword">var</span>						<span class="comment">// 变量被读或写时停住程序</span></span><br><span class="line">info watchpoints				<span class="comment">// 列出所有观察点</span></span><br></pre></td></tr></table></figure>
+<h1 id="4-捕捉点"><a href="#4-捕捉点" class="headerlink" title="4. 捕捉点"></a>4. 捕捉点</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span> event</span><br><span class="line"><span class="comment">// 捕捉某类事件,event包括throw/catch/exec/fork/vfork/load/unload/tcatch</span></span><br></pre></td></tr></table></figure>
+<h1 id="5-停止点维护"><a href="#5-停止点维护" class="headerlink" title="5. 停止点维护"></a>5. 停止点维护</h1><ul>
+<li>停止点：断点 + 观察点 + 捕捉点<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">clear						<span class="comment">// 清除所有已定义的停止点</span></span><br><span class="line">clear function</span><br><span class="line">clear filename:function		<span class="comment">// 清除所有设置在函数上的停止点</span></span><br><span class="line">clear line_number</span><br><span class="line">clear filename:line_number	<span class="comment">// 清除所有设置在指定行上的停止点</span></span><br><span class="line"></span><br><span class="line">delete breakpoints range	<span class="comment">// 删除指定的断点，breakpoings-断点号，range-断点号范围</span></span><br><span class="line">	delete <span class="number">5</span>				<span class="comment">// 清除第5个断点</span></span><br><span class="line">	delete <span class="number">6</span>-<span class="number">10</span>				<span class="comment">// 清除第6-10个断点</span></span><br><span class="line"></span><br><span class="line">disable breakpoints range	<span class="comment">// disable所指定的停止点</span></span><br><span class="line">	disable					<span class="comment">// 禁止所有断点</span></span><br><span class="line">	disable <span class="number">4</span>				<span class="comment">// 禁止第4个断点</span></span><br><span class="line">	disable <span class="number">1</span>-<span class="number">5</span>				<span class="comment">// 禁止第1-5个断点</span></span><br><span class="line"></span><br><span class="line">enable breakpoints range	<span class="comment">// enable所指定的停止点</span></span><br><span class="line">	enable					<span class="comment">// 激活所有断点</span></span><br><span class="line">	enable <span class="number">4</span>				<span class="comment">// 激活第4个断点</span></span><br><span class="line">	enable <span class="number">5</span>-<span class="number">6</span>				<span class="comment">// 激活5-6个断点</span></span><br><span class="line"></span><br><span class="line">enable once breakpoints range	<span class="comment">// 使能一次，触发后禁止</span></span><br><span class="line">enable delete breakpoints range	<span class="comment">// 使能一次，触发后删除</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="6-代码查看"><a href="#6-代码查看" class="headerlink" title="6. 代码查看"></a>6. 代码查看</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">显示源码：</span><br><span class="line">	list line_number	<span class="comment">// 显示程序第line_number行附近的源程序</span></span><br><span class="line">	list function		<span class="comment">// 显示某个函数源码</span></span><br><span class="line">	list				<span class="comment">// 显示当前行后面的代码</span></span><br><span class="line">	list -				<span class="comment">// 显示当前行前面的代码</span></span><br><span class="line">	list start,end		<span class="comment">// 查看[start, end]之间的源码</span></span><br><span class="line">	list ,end			<span class="comment">// 从当前行到end行之间的源码</span></span><br><span class="line"></span><br><span class="line">查看和设置查看行数：</span><br><span class="line">	show listsize		<span class="comment">// 查看当前listsize的设置</span></span><br><span class="line">	set listsize number	<span class="comment">// 设置一次显示源码的行数</span></span><br><span class="line"></span><br><span class="line">代码地址查看：</span><br><span class="line">	info line function		<span class="comment">// 查看函数的内存地址范围</span></span><br><span class="line">	info line filename:func</span><br><span class="line">	info line line_number	<span class="comment">// 查看指定源码在内存中的地址</span></span><br><span class="line"></span><br><span class="line">查看代码的汇编代码：</span><br><span class="line">	disassemble func		<span class="comment">// 查看函数func的汇编代码</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="7-修改变量值"><a href="#7-修改变量值" class="headerlink" title="7. 修改变量值"></a>7. 修改变量值</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">查看变量的值：</span><br><span class="line">	p width				<span class="comment">// 查看变量</span></span><br><span class="line">	p array				<span class="comment">// 查看数组</span></span><br><span class="line">	p array[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">查看变量类型：</span><br><span class="line">	whatis width</span><br><span class="line">	</span><br><span class="line">设置变量的值：</span><br><span class="line">	set <span class="keyword">var</span> width=<span class="number">47</span>	<span class="comment">// set width=47可能出错，set var告诉GDB，width是程序变量名</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="8-编码格式"><a href="#8-编码格式" class="headerlink" title="8. 编码格式"></a>8. 编码格式</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查看编码格式：</span><br><span class="line">	show host-charset</span><br><span class="line"></span><br><span class="line">设置编码格式：</span><br><span class="line">	set charset UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure>
+<h1 id="9-用例执行"><a href="#9-用例执行" class="headerlink" title="9. 用例执行"></a>9. 用例执行</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">执行整个测试套：</span><br><span class="line">	r --gtest_filter=<span class="string">"testsuite.*"</span></span><br><span class="line"></span><br><span class="line">执行单个测试用例：</span><br><span class="line">	r --gtest_filter=<span class="string">"testsuite.testcase"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参考文章</strong><br><a href="https://wizardforcel.gitbooks.io/100-gdb-tips/content/change-string.html" target="_blank" rel="noopener">100个gdb小技巧</a><br><a href="https://blog.csdn.net/wfei101/article/details/78116306" target="_blank" rel="noopener">Linux下gdb命令</a></p>
+<p><strong>2020-08-02 create by shuaixio</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/02/C++%20gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/" data-id="ckdcjphwe0000tocma52ia3wj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C++ vector数组操作函数总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/02/C++%20gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/">C++ gdb常用命令汇总</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/26/C++%20vector%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93/">C++ vector数组操作函数总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/19/C++%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/">C++ 字符串操作函数使用总结</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/18/C++%20%E5%9F%BA%E7%A1%80%E5%92%8C%E8%BF%9B%E9%98%B6%E7%AC%94%E8%AE%B0/">C++ 基础和进阶笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/Python-%E8%AF%BB%E5%8F%96%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%B9%B6%E7%BB%9F%E8%AE%A1%E5%85%B6%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0-%E5%B0%8F%E7%A8%8B%E5%BA%8F/">Python-读取目录下所有文件并统计其代码行数-小程序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
